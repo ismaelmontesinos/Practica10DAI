@@ -1,0 +1,10 @@
+
+{% extends "base.html" %}
+
+{% block contenido %}
+ 		<h1>Esperemos que lo haya disfrutado</h1>
+		<form method="POST"> {% csrf_token %}
+		
+		<button type='submit' class="save btn btn-success" value="form"> Devolver </button>
+		</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+
+{% block contenido %}
+<h1> Impresion de libros </h1>
+
+	{% for libro in libros %}
+
+		<p>Titulo: {{ libro.titulo }}, Autor: {{libro.autor}}, publicado el {{libro.publicacion}}
+      <a class="btn btn-success" href="/delete/{{libro.id}}" onClick="return confirm('¿Seguro que quieres borrar el libro {{libro.nombre}}?');">Borrar</a>
+		  <a class="btn btn-success" href="/update/{{libro.id}}">Editar</a></p>
+
+	{% endfor %}
+{% endblock %}

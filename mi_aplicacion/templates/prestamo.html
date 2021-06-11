@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+
+{% block contenido %}
+<h1> Prestamo de libros </h1>
+ 
+	
+	
+	{% for libro in libros %}
+		{% if libro.prestado == False %}
+			<p>Titulo: {{ libro.titulo }}, Autor: {{libro.autor}}, publicado el {{libro.publicacion}} 
+			<a class="btn btn btn-success" href="/pedir_prestamo/{{libro.id}}">Pedir Prestamo</a></p>
+		{% else %}
+			<p>Titulo: {{ libro.titulo }}, Autor: {{libro.autor}}, publicado el {{libro.publicacion}} 
+			<a class="btn btn btn-success" href="/devolver_prestamo/{{libro.id}}">Devolver Prestamo</a></p>
+		{% endif %}
+		
+	{% endfor %}
+{% endblock %}

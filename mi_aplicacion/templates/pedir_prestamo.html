@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+ 		<h1>Pedir Prestamo</h1>
+
+
+	 		<p>Titulo: {{ libro.titulo}}, Autor: {{libro.autor}}</p>
+			<form method="POST"> {% csrf_token %}
+			{{ form.as_p }}
+			<button type='submit' class="save btn btn-default"> Prestar </button>
+			</form>
+
+
+{% endblock %}
